@@ -17,13 +17,13 @@ while True:
         banco["Idade"] = i
         dados.append(banco.copy())
         
-    elif operacao== 'B' or operacao == 'BUSCA':
+    elif opcao == 'B' or opcao == 'BUSCA':
         buscaNome = input('Digite o nome que deseja buscar: ')
-        for nome in dados:
-            if buscaNome == nome:
-                print("Achei")
-        else:
-            print('Nome nao encontrado! ')  
+        for cadastro in dados:
+            for nome in cadastro.values():
+                if buscaNome == nome:
+                    print(cadastro)
+                    break
            
     elif operacao == 'M' or operacao == 'MOSTRAR':
           mN = pd.DataFrame(dados)
